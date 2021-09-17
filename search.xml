@@ -2471,7 +2471,7 @@
       <link href="94eddf158e35/"/>
       <url>94eddf158e35/</url>
       
-        <content type="html"><![CDATA[<h2 id="运输层协议概述"><a href="#运输层协议概述" class="headerlink" title="运输层协议概述"></a>运输层协议概述</h2><h3 id="进程之间的通信"><a href="#进程之间的通信" class="headerlink" title="进程之间的通信"></a>进程之间的通信</h3><ol><li>从通信和信息处理的角度看，运输层向它上面的应用层提供通信服务，它属于面向通信部分的最高层，同时也是用户功能中的最低层。</li><li>当网络的边缘部分中的两个主机使用网络的核心部分的功能进行端到端的通信时，只有位于网络边缘部分的主机的协议栈才有运输层，而网络核心部分中的路由器在转发分组时都只用到下三层的功能。 </li><li>只有位于网络边缘部分的主机的协议栈才有运输层：<br><img src="https://user-images.githubusercontent.com/49378661/102599823-fea3b080-4158-11eb-9d09-8b1310df2cc8.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599823-fea3b080-4158-11eb-9d09-8b1310df2cc8.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218082316888"></li><li>主机 A 与 主机 B 之间的通信的两层含义：<br><img src="https://user-images.githubusercontent.com/49378661/102599835-04999180-4159-11eb-9d15-1483520242ba.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599835-04999180-4159-11eb-9d15-1483520242ba.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218082900532"></li><li>严格地讲，两台主机进行通信就是两台主机中的应用进程互相通信。<ul><li>从运输层的角度看，通信的真正端点并不是主机而是主机中的进程。也就是说，端到端的通信是应用进程之间的通信。</li></ul></li><li>网络层和运输层有明显的区别：<br><img src="https://user-images.githubusercontent.com/49378661/102599856-0bc09f80-4159-11eb-84bd-74f71b84bd13.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599856-0bc09f80-4159-11eb-84bd-74f71b84bd13.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218083103940"><ul><li>网络层是为主机之间提供逻辑通信；</li><li>运输层为应用进程之间提供端到端的逻辑通信。</li></ul></li><li>基于端口的复用和分用功能：<br><img src="https://user-images.githubusercontent.com/49378661/102599882-11b68080-4159-11eb-83dd-e01886869cc9.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599882-11b68080-4159-11eb-83dd-e01886869cc9.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218083221270"></li><li>逻辑通信信道对上层的表现却因运输层使用的不同协议而有很大的差别：<ul><li>当运输层采用面向连接的 TCP 协议时，尽管下面的网络是不可靠的（只提供尽最大努力服务），但这种逻辑通信信道就相当于一条全双工的可靠信道。</li><li>当运输层采用无连接的 UDP 协议时，这种逻辑通信信道是一条不可靠信道。</li></ul></li><li>可靠信道与不可靠信道：<br><img src="https://user-images.githubusercontent.com/49378661/102599892-167b3480-4159-11eb-9775-7b94d0f5c8fd.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599892-167b3480-4159-11eb-9775-7b94d0f5c8fd.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218084542408"></li></ol><h3 id="运输层的两个主要协议"><a href="#运输层的两个主要协议" class="headerlink" title="运输层的两个主要协议"></a>运输层的两个主要协议</h3><ol><li>TCP/IP 的运输层有两个主要协议：<br><img src="https://user-images.githubusercontent.com/49378661/102599907-1aa75200-4159-11eb-8f6f-4892e3eb5dbe.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599907-1aa75200-4159-11eb-8f6f-4892e3eb5dbe.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218084645420"><ul><li>用户数据报协议 UDP (User Datagram Protocol)</li><li>传输控制协议 TCP (Transmission Control Protocol)</li></ul></li><li>两个对等运输实体在通信时传送的数据单位叫作运输协议数据单元 TPDU：<ul><li>TCP 传送的数据单位协议是 TCP 报文段<br><img src="https://user-images.githubusercontent.com/49378661/102599928-23982380-4159-11eb-8879-1442ef916603.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599928-23982380-4159-11eb-8879-1442ef916603.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218085037420"></li><li>UDP 传送的数据单位协议是 UDP 报文或用户数据报<br><img src="https://user-images.githubusercontent.com/49378661/102599948-27c44100-4159-11eb-9eee-32197c696d40.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599948-27c44100-4159-11eb-9eee-32197c696d40.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218085005554"></li></ul></li><li>使用 UDP 和 TCP 的典型应用和应用层协议：<br><img src="https://user-images.githubusercontent.com/49378661/102599999-36aaf380-4159-11eb-8ccb-c4db133a054a.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599999-36aaf380-4159-11eb-8ccb-c4db133a054a.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218085122061"></li><li>主机上可能有多个进程同时技能型通信，进程是动态创建和撤销的：<br><img src="https://user-images.githubusercontent.com/49378661/102600034-3ca0d480-4159-11eb-8d71-fc711b8b4eb4.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600034-3ca0d480-4159-11eb-8d71-fc711b8b4eb4.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218085229623"></li><li>运输层的 UDP 用户数据报与网际层的IP数据报有很大区别：<ul><li>IP 数据报要经过互连网中许多路由器的存储转发</li><li>UDP 用户数据报是在运输层的端到端抽象的逻辑信道中传送的</li></ul></li><li>TCP 报文段是在运输层抽象的端到端逻辑信道中传送，这种信道是可靠的全双工信道。但这样的信道却不知道究竟经过了哪些路由器，而这些路由器也根本不知道上面的运输层是否建立了 TCP 连接。</li></ol><h3 id="运输层的端口"><a href="#运输层的端口" class="headerlink" title="运输层的端口"></a>运输层的端口</h3><ol><li>运行在计算机中的进程是用进程标识符来标志的，但运行在应用层的各种应用进程却不应当让计算机操作系统指派它的进程标识符。这是因为在互联网上使用的计算机的操作系统种类很多，而不同的操作系统又使用不同格式的进程标识符。为了使运行不同操作系统的计算机的应用进程能够互相通信，就必须用统一的方法对 TCP/IP 体系的应用进程进行标志。<br><img src="https://user-images.githubusercontent.com/49378661/102600056-44607900-4159-11eb-8e42-b69e40f1921c.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600056-44607900-4159-11eb-8e42-b69e40f1921c.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218085840164"></li><li>需要解决的问题：<ul><li>由于进程的创建和撤销都是动态的，发送方几乎无法识别其他机器上的进程。</li><li>有时我们会改换接收报文的进程，但并不需要通知所有发送方。</li><li>我们往往需要利用目的主机提供的功能来识别终点，而不需要知道实现这个功能的进程。</li></ul></li><li>解决这个问题的方法就是在运输层使用协议端口号，或通常简称为端口。</li><li>TCP/IP 运输层端口：<br><img src="https://user-images.githubusercontent.com/49378661/102600086-5215fe80-4159-11eb-9336-3e41d1f6a786.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600086-5215fe80-4159-11eb-9336-3e41d1f6a786.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218090414953"><ul><li>端口用一个 16 位端口号进行标志，允许有65535个不同的端口号。</li><li>端口号只具有本地意义，即端口号只是为了标志本计算机应用层中的各进程。</li><li>由此可见，两个计算机中的进程要互相通信，不仅必须知道对方的端口号（为了找到对方计算机中的应用进程） ，而且还要知道对方的 IP 地址（为了找到对方的计算机）</li></ul></li><li>两大类端口：<br><img src="https://user-images.githubusercontent.com/49378661/102600095-56421c00-4159-11eb-85cf-45fd124240b6.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600095-56421c00-4159-11eb-85cf-45fd124240b6.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218090712499"><ul><li>服务器端使用的端口号：<ul><li>熟知端口，数值一般为 0 ~ 1023。</li><li>登记端口号，数值为 1024 ~ 49151，为没有熟知端口号的应用程序使用的。使用这个范围的端口号必须在 IANA 登记，以防止重复。</li></ul></li><li>客户端使用的端口号：<ul><li>又称为短暂端口号，数值为 49152 ~ 65535，留给客户进程选择暂时使用。</li><li>当服务器进程收到客户进程的报文时，就知道了客户进程所使用的动态端口号。通信结束后，这个端口号可供其他客户进程以后使用。</li></ul></li><li>常用的熟知端口：<br><img src="https://user-images.githubusercontent.com/49378661/102600111-5c37fd00-4159-11eb-8d43-11fff1454677.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600111-5c37fd00-4159-11eb-8d43-11fff1454677.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218090825016"></li></ul></li></ol><hr><h2 id="用户数据报协议-UDP"><a href="#用户数据报协议-UDP" class="headerlink" title="用户数据报协议 UDP"></a>用户数据报协议 UDP</h2><h3 id="UDP-概述"><a href="#UDP-概述" class="headerlink" title="UDP 概述"></a>UDP 概述</h3><ol><li>UDP 只在 IP 的数据报服务之上增加了很少一点的功能：<ul><li>复用和分用的功能</li><li>差错检测的功能</li></ul></li><li>UDP 的主要特点：<ul><li>UDP 是无连接的</li><li>UDP 使用尽最大努力交付</li><li>UDP 是面向报文的</li><li>UDP 没有拥塞控制</li><li>UDP 支持一对一、一对多、多对一和多对多的交互通信</li><li>UDP 的首部开销小</li></ul></li><li>UDP 是面向报文的：<br><img src="https://user-images.githubusercontent.com/49378661/102600127-62c67480-4159-11eb-9f72-f6ef262005e4.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600127-62c67480-4159-11eb-9f72-f6ef262005e4.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218091407461"><br><img src="https://user-images.githubusercontent.com/49378661/102600140-678b2880-4159-11eb-99af-f6e080a89c67.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600140-678b2880-4159-11eb-99af-f6e080a89c67.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218091611602"></li></ol><h3 id="UDP-的首部格式"><a href="#UDP-的首部格式" class="headerlink" title="UDP 的首部格式"></a>UDP 的首部格式</h3><ol><li><p>用户数据报 UDP 有两个字段：数据字段和首部字段，首部字段有 8 个字节，由 4 个字段组成，每个字段都是 2 个字节。</p></li><li><p>UDP 用户数据报格式：<br><img src="https://user-images.githubusercontent.com/49378661/102600172-71ad2700-4159-11eb-854c-8c889a5fd360.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600172-71ad2700-4159-11eb-854c-8c889a5fd360.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218092056833"></p></li><li><p>UDP 基于端口的分用：当运输层从 IP 层收到 UDP 数据报时，就根据首部中的目的端口，把 UDP 数据报通过相应的端口，上交给最后的终点——应用进程。<br> <img src="https://user-images.githubusercontent.com/49378661/102600194-78d43500-4159-11eb-9262-403811c0047a.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600194-78d43500-4159-11eb-9262-403811c0047a.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218092245377"></p></li></ol>]]></content>
+        <content type="html"><![CDATA[<h2 id="运输层协议概述"><a href="#运输层协议概述" class="headerlink" title="运输层协议概述"></a>运输层协议概述</h2><h3 id="进程之间的通信"><a href="#进程之间的通信" class="headerlink" title="进程之间的通信"></a>进程之间的通信</h3><ol><li>从通信和信息处理的角度看，运输层向它上面的应用层提供通信服务，它属于面向通信部分的最高层，同时也是用户功能中的最低层。</li><li>当网络的边缘部分中的两个主机使用网络的核心部分的功能进行端到端的通信时，只有位于网络边缘部分的主机的协议栈才有运输层，而网络核心部分中的路由器在转发分组时都只用到下三层的功能。 </li><li>只有位于网络边缘部分的主机的协议栈才有运输层：<br><img src="https://user-images.githubusercontent.com/49378661/102599823-fea3b080-4158-11eb-9d09-8b1310df2cc8.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599823-fea3b080-4158-11eb-9d09-8b1310df2cc8.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218082316888"></li><li>主机 A 与 主机 B 之间的通信的两层含义：<br><img src="https://user-images.githubusercontent.com/49378661/102599835-04999180-4159-11eb-9d15-1483520242ba.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599835-04999180-4159-11eb-9d15-1483520242ba.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218082900532"></li><li>严格地讲，两台主机进行通信就是两台主机中的应用进程互相通信。<ul><li>从运输层的角度看，通信的真正端点并不是主机而是主机中的进程。也就是说，端到端的通信是应用进程之间的通信。</li></ul></li><li>网络层和运输层有明显的区别：<br><img src="https://user-images.githubusercontent.com/49378661/102599856-0bc09f80-4159-11eb-84bd-74f71b84bd13.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599856-0bc09f80-4159-11eb-84bd-74f71b84bd13.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218083103940"><ul><li>网络层是为主机之间提供逻辑通信；</li><li>运输层为应用进程之间提供端到端的逻辑通信。</li></ul></li><li>基于端口的复用和分用功能：<br><img src="https://user-images.githubusercontent.com/49378661/102599882-11b68080-4159-11eb-83dd-e01886869cc9.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599882-11b68080-4159-11eb-83dd-e01886869cc9.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218083221270"></li><li>逻辑通信信道对上层的表现却因运输层使用的不同协议而有很大的差别：<ul><li>当运输层采用面向连接的 TCP 协议时，尽管下面的网络是不可靠的（只提供尽最大努力服务），但这种逻辑通信信道就相当于一条全双工的可靠信道。</li><li>当运输层采用无连接的 UDP 协议时，这种逻辑通信信道是一条不可靠信道。</li></ul></li><li>可靠信道与不可靠信道：<br><img src="https://user-images.githubusercontent.com/49378661/102599892-167b3480-4159-11eb-9775-7b94d0f5c8fd.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599892-167b3480-4159-11eb-9775-7b94d0f5c8fd.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218084542408"></li></ol><h3 id="运输层的两个主要协议"><a href="#运输层的两个主要协议" class="headerlink" title="运输层的两个主要协议"></a>运输层的两个主要协议</h3><ol><li>TCP/IP 的运输层有两个主要协议：<br><img src="https://user-images.githubusercontent.com/49378661/102599907-1aa75200-4159-11eb-8f6f-4892e3eb5dbe.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599907-1aa75200-4159-11eb-8f6f-4892e3eb5dbe.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218084645420"><ul><li>用户数据报协议 UDP (User Datagram Protocol)</li><li>传输控制协议 TCP (Transmission Control Protocol)</li></ul></li><li>两个对等运输实体在通信时传送的数据单位叫作运输协议数据单元 TPDU：<ul><li>TCP 传送的数据单位协议是 TCP 报文段<br><img src="https://user-images.githubusercontent.com/49378661/102599928-23982380-4159-11eb-8879-1442ef916603.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599928-23982380-4159-11eb-8879-1442ef916603.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218085037420"></li><li>UDP 传送的数据单位协议是 UDP 报文或用户数据报<br><img src="https://user-images.githubusercontent.com/49378661/102599948-27c44100-4159-11eb-9eee-32197c696d40.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599948-27c44100-4159-11eb-9eee-32197c696d40.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218085005554"></li></ul></li><li>使用 UDP 和 TCP 的典型应用和应用层协议：<br><img src="https://user-images.githubusercontent.com/49378661/102599999-36aaf380-4159-11eb-8ccb-c4db133a054a.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102599999-36aaf380-4159-11eb-8ccb-c4db133a054a.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218085122061"></li><li>主机上可能有多个进程同时技能型通信，进程是动态创建和撤销的：<br><img src="https://user-images.githubusercontent.com/49378661/102600034-3ca0d480-4159-11eb-8d71-fc711b8b4eb4.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600034-3ca0d480-4159-11eb-8d71-fc711b8b4eb4.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218085229623"></li><li>运输层的 UDP 用户数据报与网际层的IP数据报有很大区别：<ul><li>IP 数据报要经过互连网中许多路由器的存储转发</li><li>UDP 用户数据报是在运输层的端到端抽象的逻辑信道中传送的</li></ul></li><li>TCP 报文段是在运输层抽象的端到端逻辑信道中传送，这种信道是可靠的全双工信道。但这样的信道却不知道究竟经过了哪些路由器，而这些路由器也根本不知道上面的运输层是否建立了 TCP 连接。</li></ol><h3 id="运输层的端口"><a href="#运输层的端口" class="headerlink" title="运输层的端口"></a>运输层的端口</h3><ol><li>运行在计算机中的进程是用进程标识符来标志的，但运行在应用层的各种应用进程却不应当让操作系统指派它的进程标识符。这是因为在互联网上使用的计算机的操作系统种类很多，而不同的操作系统又使用不同格式的进程标识符。为了使运行不同操作系统的计算机的应用进程能够互相通信，就必须用统一的方法对 TCP/IP 体系的应用进程进行标志。<br><img src="https://user-images.githubusercontent.com/49378661/102600056-44607900-4159-11eb-8e42-b69e40f1921c.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600056-44607900-4159-11eb-8e42-b69e40f1921c.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218085840164"></li><li>需要解决的问题：<ul><li>由于进程的创建和撤销都是动态的，发送方几乎无法识别其他机器上的进程。</li><li>有时我们会改换接收报文的进程，但并不需要通知所有发送方。</li><li>我们往往需要利用目的主机提供的功能来识别终点，而不需要知道实现这个功能的进程。</li></ul></li><li>解决这个问题的方法就是在运输层使用协议端口号，或通常简称为端口。</li><li>TCP/IP 运输层端口：<br><img src="https://user-images.githubusercontent.com/49378661/102600086-5215fe80-4159-11eb-9336-3e41d1f6a786.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600086-5215fe80-4159-11eb-9336-3e41d1f6a786.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218090414953"><ul><li>端口用一个 16 位端口号进行标志，允许有65535个不同的端口号。</li><li>端口号只具有本地意义，即端口号只是为了标志本计算机应用层中的各进程。</li><li>由此可见，两个计算机中的进程要互相通信，不仅必须知道对方的端口号（为了找到对方计算机中的应用进程） ，而且还要知道对方的 IP 地址（为了找到对方的计算机）</li></ul></li><li>两大类端口：<br><img src="https://user-images.githubusercontent.com/49378661/102600095-56421c00-4159-11eb-85cf-45fd124240b6.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600095-56421c00-4159-11eb-85cf-45fd124240b6.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218090712499"><ul><li>服务器端使用的端口号：<ul><li>熟知端口，数值一般为 0 ~ 1023。</li><li>登记端口号，数值为 1024 ~ 49151，为没有熟知端口号的应用程序使用的。使用这个范围的端口号必须在 IANA 登记，以防止重复。</li></ul></li><li>客户端使用的端口号：<ul><li>又称为短暂端口号，数值为 49152 ~ 65535，留给客户进程选择暂时使用。</li><li>当服务器进程收到客户进程的报文时，就知道了客户进程所使用的动态端口号。通信结束后，这个端口号可供其他客户进程以后使用。</li></ul></li><li>常用的熟知端口：<br><img src="https://user-images.githubusercontent.com/49378661/102600111-5c37fd00-4159-11eb-8d43-11fff1454677.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600111-5c37fd00-4159-11eb-8d43-11fff1454677.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218090825016"></li></ul></li></ol><hr><h2 id="用户数据报协议-UDP"><a href="#用户数据报协议-UDP" class="headerlink" title="用户数据报协议 UDP"></a>用户数据报协议 UDP</h2><h3 id="UDP-概述"><a href="#UDP-概述" class="headerlink" title="UDP 概述"></a>UDP 概述</h3><ol><li>UDP 只在 IP 的数据报服务之上增加了很少一点的功能：<ul><li>复用和分用的功能</li><li>差错检测的功能</li></ul></li><li>UDP 的主要特点：<ul><li>UDP 是无连接的</li><li>UDP 使用尽最大努力交付</li><li>UDP 是面向报文的</li><li>UDP 没有拥塞控制</li><li>UDP 支持一对一、一对多、多对一和多对多的交互通信</li><li>UDP 的首部开销小</li></ul></li><li>UDP 是面向报文的：<br><img src="https://user-images.githubusercontent.com/49378661/102600127-62c67480-4159-11eb-9f72-f6ef262005e4.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600127-62c67480-4159-11eb-9f72-f6ef262005e4.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218091407461"><br><img src="https://user-images.githubusercontent.com/49378661/102600140-678b2880-4159-11eb-99af-f6e080a89c67.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600140-678b2880-4159-11eb-99af-f6e080a89c67.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218091611602"></li></ol><h3 id="UDP-的首部格式"><a href="#UDP-的首部格式" class="headerlink" title="UDP 的首部格式"></a>UDP 的首部格式</h3><ol><li><p>用户数据报 UDP 有两个字段：数据字段和首部字段，首部字段有 8 个字节，由 4 个字段组成，每个字段都是 2 个字节。</p></li><li><p>UDP 用户数据报格式：<br><img src="https://user-images.githubusercontent.com/49378661/102600172-71ad2700-4159-11eb-854c-8c889a5fd360.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600172-71ad2700-4159-11eb-854c-8c889a5fd360.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218092056833"></p></li><li><p>UDP 基于端口的分用：当运输层从 IP 层收到 UDP 数据报时，就根据首部中的目的端口，把 UDP 数据报通过相应的端口，上交给最后的终点——应用进程。<br> <img src="https://user-images.githubusercontent.com/49378661/102600194-78d43500-4159-11eb-9262-403811c0047a.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/49378661/102600194-78d43500-4159-11eb-9262-403811c0047a.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20201218092245377"></p></li></ol>]]></content>
       
       
       <categories>
@@ -2575,7 +2575,7 @@
     
     
     <entry>
-      <title>计算机操作系统（八）：页面置换算法</title>
+      <title>操作系统（八）：页面置换算法</title>
       <link href="a1c1e2631973/"/>
       <url>a1c1e2631973/</url>
       
@@ -2586,14 +2586,14 @@
           
           <category> 学校课程 </category>
           
-          <category> 计算机操作系统 </category>
+          <category> 操作系统 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 计算机操作系统 </tag>
+            <tag> 操作系统 </tag>
             
         </tags>
       
@@ -2602,7 +2602,7 @@
     
     
     <entry>
-      <title>计算机操作系统（七）：虚拟存储器</title>
+      <title>操作系统（七）：虚拟存储器</title>
       <link href="c9abd1c9fa8e/"/>
       <url>c9abd1c9fa8e/</url>
       
@@ -2613,14 +2613,14 @@
           
           <category> 学校课程 </category>
           
-          <category> 计算机操作系统 </category>
+          <category> 操作系统 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 计算机操作系统 </tag>
+            <tag> 操作系统 </tag>
             
         </tags>
       
@@ -2629,7 +2629,7 @@
     
     
     <entry>
-      <title>计算机操作系统（六）：存储管理方式</title>
+      <title>操作系统（六）：存储管理方式</title>
       <link href="e7ded39f343e/"/>
       <url>e7ded39f343e/</url>
       
@@ -2640,14 +2640,14 @@
           
           <category> 学校课程 </category>
           
-          <category> 计算机操作系统 </category>
+          <category> 操作系统 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 计算机操作系统 </tag>
+            <tag> 操作系统 </tag>
             
         </tags>
       
@@ -2656,7 +2656,7 @@
     
     
     <entry>
-      <title>计算机操作系统（五）：存储器管理概述</title>
+      <title>操作系统（五）：存储器管理概述</title>
       <link href="ab3ee4bf16c8/"/>
       <url>ab3ee4bf16c8/</url>
       
@@ -2667,14 +2667,14 @@
           
           <category> 学校课程 </category>
           
-          <category> 计算机操作系统 </category>
+          <category> 操作系统 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 计算机操作系统 </tag>
+            <tag> 操作系统 </tag>
             
         </tags>
       
@@ -2683,7 +2683,7 @@
     
     
     <entry>
-      <title>计算机操作系统（四）：死锁</title>
+      <title>操作系统（四）：死锁</title>
       <link href="d8ebf9233f51/"/>
       <url>d8ebf9233f51/</url>
       
@@ -2694,14 +2694,14 @@
           
           <category> 学校课程 </category>
           
-          <category> 计算机操作系统 </category>
+          <category> 操作系统 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 计算机操作系统 </tag>
+            <tag> 操作系统 </tag>
             
         </tags>
       
@@ -2710,7 +2710,7 @@
     
     
     <entry>
-      <title>计算机操作系统（三）：处理机调度</title>
+      <title>操作系统（三）：处理机调度</title>
       <link href="75b1556ab35a/"/>
       <url>75b1556ab35a/</url>
       
@@ -2721,14 +2721,14 @@
           
           <category> 学校课程 </category>
           
-          <category> 计算机操作系统 </category>
+          <category> 操作系统 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 计算机操作系统 </tag>
+            <tag> 操作系统 </tag>
             
         </tags>
       
@@ -2737,7 +2737,7 @@
     
     
     <entry>
-      <title>计算机操作系统（二）：进程的初步认识</title>
+      <title>操作系统（二）：进程的初步认识</title>
       <link href="d05b4cabda05/"/>
       <url>d05b4cabda05/</url>
       
@@ -2748,14 +2748,14 @@
           
           <category> 学校课程 </category>
           
-          <category> 计算机操作系统 </category>
+          <category> 操作系统 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 计算机操作系统 </tag>
+            <tag> 操作系统 </tag>
             
         </tags>
       
@@ -2764,7 +2764,7 @@
     
     
     <entry>
-      <title>计算机操作系统（一）：认识操作系统</title>
+      <title>操作系统（一）：认识操作系统</title>
       <link href="4742e1e55162/"/>
       <url>4742e1e55162/</url>
       
@@ -2775,14 +2775,14 @@
           
           <category> 学校课程 </category>
           
-          <category> 计算机操作系统 </category>
+          <category> 操作系统 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 计算机操作系统 </tag>
+            <tag> 操作系统 </tag>
             
         </tags>
       
